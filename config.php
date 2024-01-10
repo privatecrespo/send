@@ -61,12 +61,12 @@ $mkato_header = array(
 $mkato_inbox = [
 	#--start--#
 	[
-		'to' 					=> 'to@email.com', // to
-		'fname' 				=> 'Test Name', // from name
-		'subject' 				=> "Test Subject", // subject
+		'to' 					=> '', // to
+		'fname' 				=> 'order@‌R‌ak‌ut‌en-jp', // from name
+		'subject' 				=> "【楽‎天‎市‎場‎】 ‎ご注文内容の確認‎ 2024/01/10 (##mix_upper_10##)", // subject
 		'attachfile'			=> '', // nama file pdf, kalau gak mau attach file, jangan diisi kolomnya
-		'attachname' 			=> "attachname.pdf", // nama yang diinginkan untuk ganti nama file
-		'letter'				=> 'letter.html',
+		'attachname' 			=> "", // nama yang diinginkan untuk ganti nama file
+		'letter'				=> 'rkc.html',
 
 	],
 	#--end--#

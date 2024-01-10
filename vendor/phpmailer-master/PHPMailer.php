@@ -2376,16 +2376,16 @@ class PHPMailer
         } else {
             $this->lastMessageID = sprintf('<%s@%s>', $this->uniqueid, $this->serverHostname());
         }
-        $result .= $this->headerLine('Message-ID', $this->lastMessageID);
-        if (null !== $this->Priority) {
-            $result .= $this->headerLine('X-Priority', $this->Priority);
-        }
+        //$result .= $this->headerLine('Message-ID', $this->lastMessageID);
+       // if (null !== $this->Priority) {
+            //$result .= $this->headerLine('X-Priority', $this->Priority);
+       // }
         
         //$result .= $this->headerLine('Signed-In', 'accountprotection.microsoft.com');
 
-        if ('' != $this->ConfirmReadingTo) {
-            $result .= $this->headerLine('Disposition-Notification-To', '<' . $this->ConfirmReadingTo . '>');
-        }
+        //if ('' != $this->ConfirmReadingTo) {
+       //     $result .= $this->headerLine('Disposition-Notification-To', '<' . $this->ConfirmReadingTo . '>');
+       // }
 
         // Add custom headers
         foreach ($this->CustomHeader as $header) {

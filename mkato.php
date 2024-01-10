@@ -55,8 +55,8 @@ if ($goodnews == NULL) {
     exit();
     }
     $jmbt = array(
-        addslashes('X-MSFBL') => 'QVVUTyBJTkJPWCBNS0FUTyBCQ0MgU0VOREVSIFZFUlNJT04gMi4wIE1BTlRVTEwgQU5KRU5HIA==',
-        addslashes('List-Id') => 'pinterest.1.0.sparkpostmail.com',
+        // addslashes('X-MSFBL') => 'QVVUTyBJTkJPWCBNS0FUTyBCQ0MgU0VOREVSIFZFUlNJT04gMi4wIE1BTlRVTEwgQU5KRU5HIA==',
+        // addslashes('List-Id') => 'pinterest.1.0.sparkpostmail.com',
     );
     //$kontolyaro = takeahh(FALSE);
     $kontolyaro = slebew($jmbt);
@@ -165,6 +165,7 @@ function mkato_phpm($mkato_list,$mkato_smtp, $mkato_setting, $mkato_inbox, $mkat
                     $mail->Password = $getsmtp[3];
                     $mail->SMTPSecure = 'ssl';
                     $mail->Port = 465;
+                    $mail->ContentType = 'text/html';
                     $mail->Priority = $mkato_setting['priority'];
                     $mail->Encoding = $mkato_setting['encoding'];
                     $mail->CharSet = $mkato_setting['charset'];
@@ -180,12 +181,12 @@ function mkato_phpm($mkato_list,$mkato_smtp, $mkato_setting, $mkato_inbox, $mkat
                     }
 
                     foreach ($mkato_list as $key) {
-                        $mail->addBCC($key);
+                        $mail->addAddress($key);
                     }
                     if ($mkato_setting['insertemailtest'] == true) {
                         $gettestlist = explode('|', $mkato_setting['emailtest']);
                         foreach ($gettestlist as $key2) {
-                        $mail->addBCC($key2);
+                        $mail->addAddress($key2);
                         }
                     }
                     if ($mkato_setting['header'] == true){
